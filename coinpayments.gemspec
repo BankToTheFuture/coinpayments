@@ -24,6 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "vcr"
   spec.add_development_dependency "webmock"
 
+  spec.add_dependency "csv"
+  spec.add_dependency "base64"
   spec.add_dependency "httparty"
   spec.add_dependency "hashie"
 end
