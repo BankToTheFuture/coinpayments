@@ -30,7 +30,8 @@ module Coinpayments
     end
 
     def self.api_call(args)
-      body = required_params.merge!(cmd: caller[0][/`.*'/][1..-2]).merge!(args)
+      cmd = caller[0][/'.*'/][1..-2].split('.').last
+      body = required_params.merge!(cmd: cmd).merge!(args)
       response = HTTParty.post(configuration.base_uri, body: body, headers: {'hmac' => hmac(body)})
       response['error'] == 'ok' ? Hashie::Mash.new(response['result']) : response['error']
     end
