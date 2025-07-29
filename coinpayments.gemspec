@@ -28,4 +28,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency "base64"
   spec.add_dependency "httparty"
   spec.add_dependency "hashie"
+  spec.add_dependency "logger"
 end
